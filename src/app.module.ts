@@ -3,12 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { DishModule } from './dish/dish.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://miMenu:Tapu-kok0@cluster0.vtklp.mongodb.net/mimenu?retryWrites=true&w=majority',
-    ),
+    ConfigModule.forRoot(),
+    MongooseModule.forRoot(process.env.DATABASE_STRING),
     DishModule,
   ],
   controllers: [AppController],
