@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type CatDocument = Dish & Document;
+export type DishDocument = Dish & Document;
 
 @Schema()
 export class Dish {
